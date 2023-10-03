@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nexus - Produtos</title>
+<style>
+ body {
+ font-family: 'Slab Serif', serif;
+ }
+ .container {max-width: 1200px;
+ margin: 0 auto;
+ padding: 20px;
+ }
+ .empresa {
+ text-align: center;
+ color: blue;
+ font-size: 74px;
+ margin-bottom: 70px;
+ }
+ .produto {
+ display: flex;
+ align-items: center;
+ margin-bottom: 20px;
+ }
+ .produto img {
+ max-width: 200px;
+ height: auto;
+ margin-right: 10px;
+ }
+ .produto-info {
+ flex-grow: 1;
+ }
+ .produto-nome {
+ font-size: 20px;
+ margin-bottom: 5px;
+ }
+ .produto-preco {
+ font-size: 18px;
+ margin-bottom: 10px;
+ }
+ .btn-adicionar {
+ background-color: blue;
+ color: white;
+ padding: 5px 10px;
+ border: none;
+ cursor: pointer;
+ }
+</style>
+</head>
+<body>
+ <div class="container">
+ <div class="empresa">Nexus</div>
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus</title>
+    <style>body {
+      font-family: Arial, sans-serif;
+    }
+    .produtos, .carrinho {
+      width: 50%;
+      float: left;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    
+    li {
+      margin: 10px 0;
+    }
+    
+    button {
+      background-color: #0b1af1;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+    
+    button:hover {
+      background-color: #45a049;
+    }
+    </style>
+    <script>// Função para adicionar um item ao carrinho
+      function adicionarAoCarrinho(botao) {
+          const produto = botao.parentElement;
+          const nome = produto.getAttribute("data-nome");
+          const preco = parseFloat(produto.getAttribute("data-preco"));
+      
+          const itemCarrinho = document.createElement("li");
+          itemCarrinho.textContent = nome + " - $" + preco.toFixed(2);
+      
+          const listaCarrinho = document.getElementById("listaCarrinho");
+          listaCarrinho.appendChild(itemCarrinho);
+      
+          atualizarTotal(preco);
+      }
+      
+      // Função para atualizar o total do carrinho
+      function atualizarTotal(preco) {
+          const totalCarrinho = document.getElementById("totalCarrinho");
+          const totalAtual = parseFloat(totalCarrinho.textContent);
+          totalCarrinho.textContent = (totalAtual + preco).toFixed(2);
+      }
+      
+      // Função para limpar o carrinho
+      function limparCarrinho() {
+          const listaCarrinho = document.getElementById("listaCarrinho");
+          listaCarrinho.innerHTML = "";
+          
+          const totalCarrinho = document.getElementById("totalCarrinho");
+          totalCarrinho.textContent = "0.00";
+      }
+      </script>
+</head>
+<body>
+    <h1>Carrinho de Compras</h1>
+    
+    <div id="produtos">
+        <h2>Produtos Disponíveis</h2>
+        <ul id="listaProdutos">
+            <li data-nome="Item 1" data-preco="6999.90">Nex Pro Plus - R$6999.90 <button onclick="adicionarAoCarrinho(this)">Adicionar</button></li>
+            <li data-nome="Item 2" data-preco="3999.90">Nex Pro - R$3999.90 <button onclick="adicionarAoCarrinho(this)">Adicionar</button></li>
+            <li data-nome="Item 3" data-preco="4999.90">Nex Max - R$4999.90 <button onclick="adicionarAoCarrinho(this)">Adicionar</button></li>
+        </ul>
+    </div>
+    
+    <div id="carrinho">
+        <h2>Seu Carrinho</h2>
+        <ul id="listaCarrinho"></ul>
+        <p>Total: $<span id="totalCarrinho">0.00</span></p>
+        <button onclick="limparCarrinho()">Limpar Carrinho</button>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    /* Estilo padrão para telas maiores que 600px de largura */
+    body {
+      font-size: 16px;
+    }
+
+    /* Estilo para telas menores ou iguais a 600px de largura */
+    @media (max-width: 600px) {
+      body {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Barra de Pesquisa Azul</title>
+  <style>
+    /* Estilo CSS para a barra de pesquisa */
+    .barra-pesquisa {
+      background-color: black; /* Define a cor de fundo como azul */
+      color: white; /* Define a cor do texto como branco */
+      padding: 10px; /* Define o preenchimento interno da barra de pesquisa */
+      border: none; /* Remove a borda da barra de pesquisa */
+      width: 300px; /* Define a largura da barra de pesquisa */
+    }
+  </style>
+</head>
+<body>
+<h1>Procure seu novo Smartphone aqui</h1>
+<input type="text" class="barra-pesquisa" placeholder="Digite sua pesquisa aqui">
+<script>
+</script>
+</body>
+</html>
+ <div class="produto">
+ <img src="https://m.media-amazon.com/images/I/518bzP8VW1L._AC_SX679_.jpg" alt="Produto
+1">
+ <div class="produto-info">
+ <div class="produto-nome">nex pro plus</div>
+ <div class="produto-preco">R$ 6999,90</div>
+ <button class="btn-adicionar">Adicionar ao Carrinho</button>
+ </div>
+ </div>
+ <div class="produto">
+ <img src="https://m.media-amazon.com/images/I/61B0+qQriPL._AC_SX679_.jpg" alt="Produto
+2">
+ <div class="produto-info">
+ <div class="produto-nome">nex pro</div>
+ <div class="produto-preco">R$ 3999,90</div>
+ <button class="btn-adicionar">Adicionar ao Carrinho</button>
+ </div>
+ </div>
+ <div class="produto">
+ <img src="https://m.media-amazon.com/images/I/61B0+qQriPL._AC_SX342_SY445_.jpg"
+alt="Produto 3">
+ <div class="produto-info">
+ <div class="produto-nome">nex plus</div>
+ <div class="produto-preco">R$ 3799,90</div>
+ <button class="btn-adicionar">Adicionar ao Carrinho</button>
+ </div>
+ </div>
+ <div class="produto">
+ <img src="https://m.media-amazon.com/images/I/619FB0+JqPL._AC_SX300_SY300_.jpg"
+alt="Produto 4">
+ <div class="produto-info">
+ <div class="produto-nome">nex max </div>
+ <div class="produto-preco">R$ 4999,90</div>
+ <button class="btn-adicionar">Adicionar ao Carrinho</button>
+ </div>
+ </div>
+ <div class="produto">
+ <img src="https://m.media-amazon.com/images/I/61V928+YOgL._AC_SX679_.jpg" alt="Produto
+5">
+ <div class="produto-info">
+ <div class="produto-nome">nex pro max</div>
+ <div class="produto-preco">R$ 5999,90</div>
+ <button class="btn-adicionar">Adicionar ao Carrinho</button>
+ </div>
+ </div>
+ </div>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nexus - Produtos</title>
+<style>
+ body {
+ font-family: 'Slab Serif', serif;
+ background-color: black; /* Cor de fundo preta */
+ color: white; /* Cor do texto */
+ margin: 0; /* Remover margens padrão do corpo */
+ }
+ /* Resto do seu CSS... */
+</style>
+</head>
+<body>
+ <!-- Seu conteúdo HTML aqui... -->
+</body>
+</html>
+
